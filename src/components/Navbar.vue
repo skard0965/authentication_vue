@@ -4,10 +4,10 @@
           <div class="container">
               <router-link to='/' class="brand-logo">goculis</router-link>
               <ul class="right">
-                    <li><router-link to="/">Dashboard</router-link></li>
-                    <li><router-link to="/login">Login</router-link></li>
-                    <li><router-link to="/register">Register</router-link></li>
-                    <li><button v-on:click="logout" class="btn black">Logout</button></li>
+                    <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
+                    <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
+                    <li v-if="!isLoggedIn"><router-link to="/register">Register</router-link></li>
+                    <li v-if="isLoggedIn"><button v-on:click="logout" class="btn black">Logout</button></li>
 
               </ul>
           </div>
